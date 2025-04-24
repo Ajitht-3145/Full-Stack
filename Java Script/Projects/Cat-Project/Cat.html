@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat-Project</title>
+    <!-- Tailwind css link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black">
+    <img id="bulb" class="h-[250px] mx-auto" src="https://ik.imagekit.io/adjfqaxvt/Cat-project/bulb-go-on-img.png?updatedAt=1745472081277" alt="bulb">
+    <img id="cat" class="h-[250px] mx-auto" src="https://ik.imagekit.io/adjfqaxvt/Cat-project/cat-img.png?updatedAt=1745469808061" alt="cat-img">
+
+    <div class="p-10 rounded-lg bg-gray-800 w-fit mx-auto my-3">
+        <h1 id="stauts"  class="text-2xl text-white text-center mb-2">Switched On</h1>
+        <div class=" flex gap-2">
+            <button id="btn_off" class="px-6 py-2 rounded-lg  bg-white">Off</button>
+            <button id="btn_on" class="px-6 py-2 rounded-lg bg-white ">On</button>
+        </div>
+    </div>
+    
+
+
+
+    <script>
+
+        var bulb =document.getElementById("bulb");
+        var cat = document.getElementById("cat");
+
+
+        var stauts =document.getElementById("stauts");
+
+        var btn_off = document.getElementById("btn_off");
+        var btn_on =document.getElementById("btn_on");
+
+
+        function updateColor(){
+            if(btn_on){
+                btn_on.style.backgroundColor= "green"
+            }else if(btn_off){
+                btn_off.style.backgroundColor= "red"
+
+            }
+            else{
+
+            }
+        }
+
+
+        btn_off.addEventListener("click",()=>{
+            bulb.src= "https://ik.imagekit.io/adjfqaxvt/Cat-project/bulb-go-off-img.png?updatedAt=1745472881570";
+            cat.src ="https://ik.imagekit.io/adjfqaxvt/Cat-project/cat-eyes-img.png?updatedAt=1745469808073";
+            updateColor();
+        })
+        btn_on.addEventListener("click",()=>{
+            bulb.src= "https://ik.imagekit.io/adjfqaxvt/Cat-project/bulb-go-on-img.png?updatedAt=1745472081277";
+            cat.src= "https://ik.imagekit.io/adjfqaxvt/Cat-project/cat-img.png?updatedAt=1745469808061";
+        })
+
+    </script>
+</body>
+</html>

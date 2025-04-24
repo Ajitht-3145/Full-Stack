@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+      <!-- tailwind css link -->
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="2xl:container mx-auto py-5">
+        <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div class="flex justify-between items-center">
+                <h1>Logo</h1>
+
+
+                <div>
+                    <svg id="menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu md:hidden"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    
+                    <svg id="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x hidden md:hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </div>
+
+            </div>
+            <div id="navlist" class="hidden md:block">
+                <ul class="flex flex-col items-center md:flex-row md:justify-end gap-2 ">
+                    <li class="list" >HOME</li>
+                    <li class="list" >ABOUT</li>
+                    <li class="list" >CONTACTS</li>
+                </ul>
+            </div>
+           
+
+        </div>
+    </div>
+
+    <script>
+        var menu =document.getElementById("menu");
+        var close = document.getElementById("close");
+        var navlist= document.getElementById("navlist");
+        var list= document.getElementsByClassName("list");
+
+        // console.log(list);
+
+        for(let i=0; i<list.length; i++){
+            list[i].addEventListener("click" ,()=>{
+                close.classList.toggle("hidden");
+                menu.classList.toggle("hidden");
+                navlist.classList.toggle("hidden");
+                
+            })
+            
+        }
+
+
+      menu.addEventListener("click",()=>{
+
+        // console.log("menu click")
+        close.classList.toggle("hidden");
+        menu.classList.toggle("hidden");
+        navlist.classList.toggle("hidden");
+        console.dir(close);
+      })
+
+      
+      close.addEventListener("click",()=>{
+        close.classList.toggle("hidden");
+        menu.classList.toggle("hidden");
+        navlist.classList.toggle("hidden");
+       
+      })
+      
+
+    </script>
+</body>
+</html>

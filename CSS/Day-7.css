@@ -1,0 +1,17 @@
+.para{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 700;
+    font-style: italic;
+    color: #0000FF;
+    text-align: center;
+    text-decoration: underline;
+}
+.container{
+    background-image: url(https://ik.imagekit.io/adjfqaxvt/Revamp%20online/curvv-.webp?updatedAt=1742924900876);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+
+}

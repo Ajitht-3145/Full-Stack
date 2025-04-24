@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #count{
+            font-size: 33px;
+        }
+    </style>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <p id="count">0</p>
+      
+    <button id="dec">DECREASE</button>
+    <button id="res">RESET</button>
+    <button id="inc">INCREASE</button>
+    
+
+
+
+<script>
+    var count= document.getElementById("count");
+    var dec = document.getElementById("dec");
+    var res = document.getElementById("res");
+    var inc = document.getElementById("inc");
+
+    console.dir(count)
+
+    // console.log(typeof(value));
+
+    function updateColor(){
+        var value= parseInt(count.textContent)
+
+        if(value < 0){
+        count.style.color = "red ";
+        }else if(value > 0){
+        count.style.color = "green";
+        }else{
+        count.style.color ="black";
+     }
+
+    }
+
+    
+
+    // var p =parseInt(count.textContent)
+    // console.log(typeof(p));
+
+     inc.addEventListener("click",()=>{
+        count.textContent= parseInt(count.textContent) +1;
+        updateColor();
+     })
+
+     dec.addEventListener("click",()=>{
+        count.textContent = parseInt(count.textContent) -1;
+        updateColor();
+
+     })
+
+     res.addEventListener("click",()=>{
+        count.textContent= 0;
+        updateColor();
+
+     })
+ 
+
+
+
+</script>
+
+    
+       
+    
+</body>
+</html>

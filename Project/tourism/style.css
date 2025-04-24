@@ -1,0 +1,18 @@
+.box{
+    background-image: url('https://ik.imagekit.io/adjfqaxvt/Tourism/sea-ocean?updatedAt=1742706018918');
+    height: 600px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* place.html */
+.boxes{
+    background-image: url('https://ik.imagekit.io/adjfqaxvt/Tourism/taj-mahal?updatedAt=1742706050253');
+    height: 600px;
+    width: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+   
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- tailwind css link -->
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class=" flex flex-col  items-center gap-3">
+        <h1 id="count" class="text-2xl mt-4">0</h1>
+
+
+        <div class="flex gap-4">
+            
+        <button id="btnstart" class="px-6 py-2 rounded-lg bg-green-600">Start</button>
+        <button id="btnstop" class="px-6 py-2 rounded-lg bg-red-600">Stop</button>
+        <button id="btntime" class="px-6 py-2 rounded-lg bg-yellow-500">Time Out</button>
+
+        </div>
+
+
+    </div>
+    
+
+
+    <script>
+        var count= document.getElementById("count");
+        var btnstart= document.getElementById("btnstart");
+        var btnstop= document.getElementById("btnstop");
+        var btntime= document.getElementById("btntime");
+
+
+        var setI;
+        btnstart.addEventListener("click",()=>{
+          setI=  setInterval(() => {
+                count.textContent = parseInt(count.textContent)+1;
+                
+            },1000)
+        })
+
+        btnstop.addEventListener("click",()=>{
+            clearInterval(setI)
+        })
+
+        btntime.addEventListener("click",()=>{
+          var setT=  setTimeout(()=>{
+                alert("Over Time")
+                clearInterval(setI)
+
+            },5000)
+        })
+
+        clearTimeout(setT)
+
+
+
+
+
+
+
+
+
+
+        // var count= 0;
+        // var setI = setInterval(()=>{
+        //     count= count + 1;
+        //     console.log(count);
+        // },1000)
+
+
+        // var sett= setTimeout(() => {
+        //     alert("Booommm")
+        //     clearInterval(setI)
+            
+        // },5000 );
+        // clearTimeout(sett)
+    </script>
+
+
+</body>
+</html>
