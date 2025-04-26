@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- tailwind css link -->
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="2xl:container mx-auto bg-green-800">
+        <div class="w-[90%] mx-auto flex justify-center items-center h-screen">
+            <div class="bg-white rounded-lg border p-5 border-white bg-opacity-10 border-opacity-20 shadow-lg shadow-black">
+                <h1 class="text-white text-center text-2xl mt-3">Update Password</h1>
+                <hr>
+                
+                    <form class="flex flex-col gap-8 mt-6" id="forms" >
+                        <div>
+                            <label for="password">NEW PASSWORD :</label>
+                            <br>
+                            <input   type="text" name="password" id="pas" class="mt-3  rounded-lg outline-none py-1 px-2 ">
+                            <p class="text-red-500 text-[20px] font-normal" id="newPass"></p>
+                            
+                        </div>
+                        <div>
+                            <label for="password">CONFIRM PASSWORD :</label>
+                            <br>
+                            <input type="text" name="password" required id="passs" class="mt-3 rounded-lg outline-none py-1 px-2">
+                            <p class="text-red-500 text-[20px] font-normal " id="confirm" ></p>
+                            
+                        </div>
+                        <button class="bg-blue-700 text-white rounded-lg px-2 py-1">Update</button>
+
+                    </form>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var forms = document.getElementById("forms");
+        var pas = document.getElementById("pas");
+        var passs = document.getElementById("passs");
+        var newPass = document.getElementById("newPass");
+        var confirm = document.getElementById("confirm");
+    
+        forms.addEventListener("submit", (e) => {
+            e.preventDefault();
+            validatePasswords(pas.value, passs.value);
+        });
+    
+        function validatePasswords(newPassword, confirmPassword) {
+            const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+    
+            // Clear previous error messages
+            newPass.textContent = "";
+            confirm.textContent = "";
+    
+            let isValid = true;
+    
+            // Validate new password
+            if (!newPassword.match(passwordRegex)) {
+                newPass.textContent = "Password must be at least 8 characters long, include uppercase, lowercase, a number, and a special character.";
+                isValid = false;
+            }
+    
+            // Validate confirm password
+            if (newPassword !== confirmPassword) {
+                confirm.textContent = "Passwords do not match.";
+                isValid = false;
+            }
+    
+            // If valid, show success message
+            if (isValid) {
+                alert("Password updated successfully!");
+                forms.reset(); // Clear the form
+            }
+        }
+    </script>
+    
+   
+    
+</body>
+</html>

@@ -31,14 +31,41 @@
 // })
 
 
-// old method 
-fetch("https://dummyjson.com/users").then((response)=>{
-    return response.json();
-}).then((data)=>{
+// // old method 
+// fetch("https://dummyjson.com/users").then((response)=>{
+//     return response.json();
+// }).then((data)=>{
 
-    console.log(data.users[6].phone);
+//     console.log(data.users[6].phone);
 
-}).catch((e)=>{
+// }).catch((e)=>{
 
-    console.log(error);
-})
+//     console.log(error);
+// })
+
+
+
+
+// fetch("https://dummyjson.com/comments").then((response)=>{
+//     // console.log(response.json());
+//     return response.json();
+// }).then((data)=>{
+//     console.log(data.comments[0].user["fullName"]);
+// }).then((e)=>{
+//     console.log("error");
+// })
+
+// New mwthod
+async function fecthData() {
+    try {
+        
+    var response = await fetch("https://dummyjson.com/recipes")
+    var data= await response.json();
+    console.log(data);
+        
+    } catch (error) {
+        
+    }
+
+}
+fecthData()
