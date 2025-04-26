@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- tailwind css link -->
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="2xl container mx-auto bg-gray-600">
+        <div class="w-[90%] mx-auto flex justify-center items-center h-screen">
+            <div class="bg-white p-5 rounded-lg border border-white bg-opacity-10 border-opacity-20 shadow-lg shadow-black">
+                <h1 class="text-white text-center text-2xl mb-3 mt-3">Update Password</h1>
+                <hr>
+
+                <form class="flex flex-col gap-8 mt-3 " id="form">
+                    <div>
+                        <label for="new password">NEW PASSWORD :</label>
+                        <br>
+                        <input class="rounded-lg outline-none px-2 py-1 mt-3 " type="text" name="new password" id="pas">
+                        <p id="newPass"></p>
+                    </div>
+                    <div>
+                        <label for="confirm password">CONFIRM PASSWORD :</label>
+                        <br>
+                        <input  class="rounded-lg outline-none px-2 py-1 mt-3" type="text" name="confirm password" id="pass">
+                        <p id="confirm"></p>
+                    </div>
+                    <button class="bg-blue-700 px-2 py-1 rounded-lg text-white">Update</button>
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script>
+         var form = document.getElementById("form");
+        var pas = document.getElementById("pas");
+        var passs = document.getElementById("pass");
+        var newPass = document.getElementById("newPass");
+        var confirm = document.getElementById("confirm");
+    
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            validatePasswords(pas.value, passs.value);
+        });
+
+        function validatePasswords(pas,pass) {
+
+            const pasRegex=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+             // Clear previous error messages
+            newPass.textContent="";
+            confirm.textContent="";
+
+            let isValid=true;
+
+            
+            // Validate new password
+            if (!pas.match(pasRegex)) {
+                newPass.textContent="Required ";
+                isValid=false;
+                
+            }
+             // Validate confirm password
+            if (pas !==pass) {
+                confirm.textContent="PassWord Must be Same";
+                isValid=false;
+                
+            }
+             // If valid, show success message
+            if (isValid) {
+                alert("Update SuccessFull");
+                form.reset();
+
+                
+            }
+
+            
+        }
+    
+       
+        
+    </script>
+    
+</body>
+</html>
